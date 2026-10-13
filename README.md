@@ -46,7 +46,7 @@ You need:
 - A Mac with macOS 13.5 or later
 - Xcode 16 or later
 - A camera: built in, external, or an iPhone through Continuity Camera
-- Something listening for OSC on `127.0.0.1`, port `9000`
+- Something listening for OSC on `127.0.0.1`, port `9000`. See "Receiving in Ableton Live" below
 
 Then:
 
@@ -60,7 +60,13 @@ From the command line:
 xcodebuild -project deepLeap.xcodeproj -scheme deepLeap -configuration Debug build
 ```
 
-The Max for Live receiver used in the production is a device named `SM OSC Receiver v2`. It listens on UDP port 9000 and is not part of this repository. Any OSC receiver on port 9000 will show the numbers.
+## Receiving in Ableton Live
+
+The app only sends. Ableton Live does not read OSC by itself, so the system needs a Max for Live device in the Live set that listens on UDP port 9000, receives the numbers and maps them to parameters. Without a receiver the app runs and tracks, and nothing happens in Ableton.
+
+The production used [SM OSC Receiver v2](https://maxforlive.com/library/device/8632/sm-osc-receiver-v2), from maxforlive.com. That device is not my work, so it is not part of this repository. Download it from its own page.
+
+To check the app without Ableton, any OSC receiver on port 9000 will show the numbers.
 
 ## Manual
 

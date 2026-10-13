@@ -2,7 +2,7 @@
 
 This is the manual written for the operator in March 2026. It came with a built copy of the app, which is not part of this repository. To build the app yourself, see [README.md](README.md).
 
-Corrected against the source on 13 October 2026: the relock shortcuts are keys 1 and 2, and the OSC sender is recreated automatically, not by relocking.
+Corrected against the source on 13 October 2026: the relock shortcuts are keys 1 and 2, and the OSC sender is recreated automatically, not by relocking. A note on the receiver that Ableton Live needs was added under System Overview.
 
 deepLeap is a macOS application for live dance performance. It uses the computer's camera to track a dancer's body movements in real time and converts those movements into OSC messages, which are sent to Ableton Live to control sound.
 
@@ -13,6 +13,8 @@ deepLeap is a macOS application for live dance performance. It uses the computer
 The app is split into two independent zones: Zone 1 on the left and Zone 2 on the right. Each zone has its own camera input, control mode, and OSC output. The zones operate completely independently of each other.
 
 OSC messages are sent via UDP to `127.0.0.1` on port `9000`.
+
+Ableton Live needs a Max for Live device listening on that port to receive the messages. The production used [SM OSC Receiver v2](https://maxforlive.com/library/device/8632/sm-osc-receiver-v2), which is a separate download and not part of deepLeap.
 
 ---
 
